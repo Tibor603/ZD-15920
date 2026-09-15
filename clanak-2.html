@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zašto je dvofaktorska autentifikacija minimum, a ne bonus — Stražar</title>
+    <meta name="description" content="Analiza incidenata pokazuje da bi većina bila spriječena jednom jednostavnom mjerom.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="wrap">
+        <a href="index.html" class="logo"><span class="logo-mark"></span>Stražar</a>
+        <input type="checkbox" id="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Otvori izbornik"><span></span></label>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="usluge.html">Usluge</a></li>
+                <li><a href="cjenik.html">Cjenik</a></li>
+                <li><a href="tim.html">Naš tim</a></li>
+                <li><a href="clanci.html" class="active">Članci</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="page-head">
+        <div class="wrap">
+            <p class="eyebrow">Savjeti</p>
+            <h1>Zašto je dvofaktorska autentifikacija minimum, a ne bonus</h1>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <article class="article-body">
+                <p class="article-meta">Objavljeno 18. kolovoza 2026. · Autorica: Ana Horvat, voditeljica nadzora i odgovora na incidente</p>
+
+                <p>Kada pregledamo incidente koje smo obradili u posljednjih godinu dana, gotovo dvije trećine započelo je s ukradenom ili pogođenom lozinkom. U velikoj većini tih slučajeva, uključena dvofaktorska autentifikacija (2FA) zaustavila bi napad na prvom koraku.</p>
+
+                <h2>Zašto sama lozinka više nije dovoljna</h2>
+                <p>Lozinke cure kroz curenja podataka, phishing stranice i ponovnu upotrebu iste lozinke na više servisa. Napadaču je danas lakše doći do valjane lozinke nego probiti dobro konfiguriran sustav.</p>
+
+                <h2>Što 2FA zapravo mijenja</h2>
+                <p>Drugi faktor — aplikacija za autentifikaciju, fizički ključ ili SMS kod — znači da ukradena lozinka sama po sebi nije dovoljna za pristup. Napadač mora imati i pristup vašem uređaju, što drastično smanjuje broj uspješnih upada.</p>
+
+                <h2>Gdje ga uvesti prvo</h2>
+                <p>Krenite od administratorskih računa, e-pošte i sustava za udaljeni pristup — to su tri najčešća ulaza koje smo vidjeli u proteklim incidentima. Tek nakon toga proširite zahtjev na sve zaposlenike.</p>
+
+                <p>Uvođenje 2FA-a jedna je od rijetkih mjera koja donosi veliko smanjenje rizika uz relativno mali trošak i trud. Ako niste sigurni gdje započeti, naš tim može napraviti kratak pregled vaših pristupnih točaka.</p>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="wrap">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <a href="index.html" class="logo"><span class="logo-mark"></span>Stražar</a>
+                <p>Hrvatski tim za informacijsku sigurnost koji štiti tvrtke od kibernetičkih napada — testiranjem, nadzorom i edukacijom.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/strazar.si" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://linkedin.com/company/strazar-si" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Stranica</h4>
+                <ul>
+                    <li><a href="usluge.html">Usluge</a></li>
+                    <li><a href="cjenik.html">Cjenik</a></li>
+                    <li><a href="tim.html">Naš tim</a></li>
+                    <li><a href="clanci.html">Članci</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Podrška</h4>
+                <ul>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                    <li><a href="privatnost.html">Politika privatnosti</a></li>
+                    <li><a href="mailto:info@strazar-sigurnost.hr">info@strazar-sigurnost.hr</a></li>
+                    <li><a href="tel:+38512345678">+385 1 234 5678</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Prijava na obavijesti</h4>
+                <p style="font-size:0.92rem;margin-bottom:14px;">Novi napadi i ranjivosti, jednom tjedno u vašem sandučiću.</p>
+                <form action="#" method="post">
+                    <label for="footer-email" style="display:none;">Email adresa</label>
+                    <input type="email" id="footer-email" name="email" placeholder="vas@email.com" required>
+                    <button type="submit" class="btn on-ink">Pretplati se</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Stražar d.o.o. Sva prava pridržana.</span>
+            <span><a href="privatnost.html">Politika privatnosti</a></span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

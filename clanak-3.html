@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kritična ranjivost u popularnom sustavu za upravljanje sadržajem — Stražar</title>
+    <meta name="description" content="Koga pogađa nova kritična ranjivost i koje korake poduzeti dok zakrpa ne bude dostupna.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="wrap">
+        <a href="index.html" class="logo"><span class="logo-mark"></span>Stražar</a>
+        <input type="checkbox" id="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Otvori izbornik"><span></span></label>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="usluge.html">Usluge</a></li>
+                <li><a href="cjenik.html">Cjenik</a></li>
+                <li><a href="tim.html">Naš tim</a></li>
+                <li><a href="clanci.html" class="active">Članci</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="page-head">
+        <div class="wrap">
+            <p class="eyebrow">Ranjivosti</p>
+            <h1>Kritična ranjivost u popularnom sustavu za upravljanje sadržajem</h1>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <article class="article-body">
+                <p class="article-meta">Objavljeno 29. srpnja 2026. · Autor: Ivan Babić, stručnjak za mrežnu sigurnost</p>
+
+                <p>Ovaj tjedan objavljena je kritična ranjivost u jednom od najkorištenijih sustava za upravljanje sadržajem web stranica. Ranjivost napadaču omogućuje izvršavanje proizvoljnog koda na poslužitelju bez prijave, što je jedan od najozbiljnijih mogućih scenarija.</p>
+
+                <h2>Koga pogađa</h2>
+                <p>Pogođene su instalacije starije od posljednje sigurnosne zakrpe koje koriste određeni popularni dodatak za obrasce. Prema našoj procjeni, riječ je o tisućama stranica u regiji, uključujući i manji broj hrvatskih domena koje smo identificirali tijekom rutinskog pregleda.</p>
+
+                <h2>Zašto je ovo ozbiljno</h2>
+                <p>Uspješna eksploatacija napadaču daje potpunu kontrolu nad stranicom — od izmjene sadržaja do postavljanja zlonamjernog koda koji zarazi posjetitelje. U dosadašnjoj praksi, ovakve ranjivosti napadači počnu iskorištavati u roku od nekoliko dana od objave.</p>
+
+                <h2>Što poduzeti odmah</h2>
+                <p>Provjerite verziju sustava i dodatka na svojoj stranici i primijenite zakrpu čim je dostupna. Ako zakrpa još nije objavljena, privremeno onemogućite pogođeni dodatak ili ograničite pristup administratorskom sučelju na poznate IP adrese.</p>
+
+                <p>Naš tim prati razvoj situacije i klijentima na nadzoru šalje obavijest čim se ranjivost pokuša iskoristiti na njihovom sustavu.</p>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="wrap">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <a href="index.html" class="logo"><span class="logo-mark"></span>Stražar</a>
+                <p>Hrvatski tim za informacijsku sigurnost koji štiti tvrtke od kibernetičkih napada — testiranjem, nadzorom i edukacijom.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/strazar.si" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://linkedin.com/company/strazar-si" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Stranica</h4>
+                <ul>
+                    <li><a href="usluge.html">Usluge</a></li>
+                    <li><a href="cjenik.html">Cjenik</a></li>
+                    <li><a href="tim.html">Naš tim</a></li>
+                    <li><a href="clanci.html">Članci</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Podrška</h4>
+                <ul>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                    <li><a href="privatnost.html">Politika privatnosti</a></li>
+                    <li><a href="mailto:info@strazar-sigurnost.hr">info@strazar-sigurnost.hr</a></li>
+                    <li><a href="tel:+38512345678">+385 1 234 5678</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Prijava na obavijesti</h4>
+                <p style="font-size:0.92rem;margin-bottom:14px;">Novi napadi i ranjivosti, jednom tjedno u vašem sandučiću.</p>
+                <form action="#" method="post">
+                    <label for="footer-email" style="display:none;">Email adresa</label>
+                    <input type="email" id="footer-email" name="email" placeholder="vas@email.com" required>
+                    <button type="submit" class="btn on-ink">Pretplati se</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Stražar d.o.o. Sva prava pridržana.</span>
+            <span><a href="privatnost.html">Politika privatnosti</a></span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
