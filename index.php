@@ -12,7 +12,18 @@
 </head>
 <body>
 
-<header class="site-header">
+    <?php
+        echo 'My first PHP script';
+    
+    $strazar="polen";
+    $crYear=2027;
+    echo $strazar;
+    echo "<p>Our company's creation date $crYear</p>";
+    echo "<p>Our company's creation date" .$crYear."</p>";
+
+    ?>
+    <header class="site-header">
+        
     <div class="wrap">
         <a href="index.html" class="logo"><span class="logo-mark"></span>Stražar</a>
         <input type="checkbox" id="nav-toggle">
