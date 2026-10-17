@@ -1,35 +1,35 @@
-<!-- TSD-4RT | AB | 22.09.2026. -->
-<!DOCTYPE html>
-<html lang="hr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usluge — Stražar</title>
-    <meta name="description" content="Penetracijsko testiranje, sigurnosni audit, nadzor 24/7, upravljanje ranjivostima i edukacija zaposlenika.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!-- TSD-4RT | TP | 22.09.2026. -->
+<?php
+$usluge = [
+["naziv" => "Procjena rizika", "cijena" => 450],
+["naziv" => "Sigurnosna analiza", "cijena" => 780], 
+["naziv" => "Edukacija zaposlenika", "cijena" => 300]
+];
+	$naslovStranice = "Usluge";
+	$aktivnaStranica = "usluge";
+  include "parts/zaglavlje.php";
+	<table>
+    <tr>
+        <th>Usluga</th>
+        <th>Cijena</th>
+    </tr>
 
-<header class="site-header">
-    <div class="wrap">
-        <a href="index.html" class="logo"><span class="logo-mark"></span>Stražar</a>
-        <input type="checkbox" id="nav-toggle">
-        <label for="nav-toggle" class="nav-toggle-label" aria-label="Otvori izbornik"><span></span></label>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html">Početna</a></li>
-                <li><a href="usluge.html" class="active">Usluge</a></li>
-                <li><a href="cjenik.html">Cjenik</a></li>
-                <li><a href="tim.html">Naš tim</a></li>
-                <li><a href="clanci.html">Članci</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    $ukupno = 0;
+
+    foreach ($usluge as $naziv => $cijena) {
+        echo "<tr>";
+        echo "<td>$naziv</td>";
+        echo "<td>$cijena €</td>";
+        echo "</tr>";
+
+        $ukupno += $cijena;
+    }
+
+    <tr>
+        <th>Ukupno</th>
+        <th><?php echo $ukupno;?> €</th>
+    </tr>
+</table>?>
 
 <main>
 
@@ -110,52 +110,15 @@
     </section>
 
 </main>
+<?php
 
-<footer class="site-footer">
-    <div class="wrap">
-        <div class="footer-grid">
-            <div class="footer-about">
-                <a href="index.html" class="logo"><span class="logo-mark"></span>Stražar</a>
-                <p>Hrvatski tim za informacijsku sigurnost koji štiti tvrtke od kibernetičkih napada — testiranjem, nadzorom i edukacijom.</p>
-                <div class="social-links">
-                    <a href="https://instagram.com/strazar.si" target="_blank" rel="noopener">Instagram</a>
-                    <a href="https://linkedin.com/company/strazar-si" target="_blank" rel="noopener">LinkedIn</a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h4>Stranica</h4>
-                <ul>
-                    <li><a href="usluge.html">Usluge</a></li>
-                    <li><a href="cjenik.html">Cjenik</a></li>
-                    <li><a href="tim.html">Naš tim</a></li>
-                    <li><a href="clanci.html">Članci</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Podrška</h4>
-                <ul>
-                    <li><a href="kontakt.html">Kontakt</a></li>
-                    <li><a href="privatnost.html">Politika privatnosti</a></li>
-                    <li><a href="mailto:info@strazar-sigurnost.hr">info@strazar-sigurnost.hr</a></li>
-                    <li><a href="tel:+38512345678">+385 1 234 5678</a></li>
-                </ul>
-            </div>
-            <div class="footer-newsletter">
-                <h4>Prijava na obavijesti</h4>
-                <p style="font-size:0.92rem;margin-bottom:14px;">Novi napadi i ranjivosti, jednom tjedno u vašem sandučiću.</p>
-                <form action="#" method="post">
-                    <label for="footer-email" style="display:none;">Email adresa</label>
-                    <input type="email" id="footer-email" name="email" placeholder="vas@email.com" required>
-                    <button type="submit" class="btn on-ink">Pretplati se</button>
-                </form>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>© 2026 Stražar d.o.o. Sva prava pridržana.</span>
-            <span><a href="privatnost.html">Politika privatnosti</a></span>
-        </div>
-    </div>
-</footer>
+$paket1 = "Basic";
+$cijena1 = 2000;
 
-</body>
-</html>
+$paket2 = "Mid class";
+$cijena2 = 35445;
+
+$paket3 = "Rich";
+$cijena3 = 5;
+?>
+<?php include "parts/podnozje.php";?>
