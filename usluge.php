@@ -1,35 +1,16 @@
 <!-- TSD-4RT | TP | 22.09.2026. -->
 <?php
 $usluge = [
-["naziv" => "Procjena rizika", "cijena" => 450],
-["naziv" => "Sigurnosna analiza", "cijena" => 780], 
-["naziv" => "Edukacija zaposlenika", "cijena" => 300]
+    ["naziv" => "Procjena rizika", "cijena" => 450],
+    ["naziv" => "Sigurnosna analiza", "cijena" => 780],
+    ["naziv" => "Edukacija zaposlenika", "cijena" => 300],
 ];
-	$naslovStranice = "Usluge";
-	$aktivnaStranica = "usluge";
-  include "parts/zaglavlje.php";
-	<table>
-    <tr>
-        <th>Usluga</th>
-        <th>Cijena</th>
-    </tr>
+$ukupno = array_sum(array_column($usluge, "cijena"));
 
-    $ukupno = 0;
-
-    foreach ($usluge as $naziv => $cijena) {
-        echo "<tr>";
-        echo "<td>$naziv</td>";
-        echo "<td>$cijena €</td>";
-        echo "</tr>";
-
-        $ukupno += $cijena;
-    }
-
-    <tr>
-        <th>Ukupno</th>
-        <th><?php echo $ukupno;?> €</th>
-    </tr>
-</table>?>
+$naslovStranice = "Usluge — Stražar";
+$aktivnaStranica = "usluge";
+include "parts/zaglavlje.php";
+?>
 
 <main>
 
@@ -78,6 +59,34 @@ $usluge = [
         </div>
     </section>
 
+    <section class="section-raised">
+        <div class="wrap">
+            <p class="eyebrow">Okvirne cijene</p>
+            <h2>Pojedinačne usluge</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Usluga</th>
+                        <th>Cijena</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($usluge as $usluga): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($usluga["naziv"]); ?></td>
+                            <td><?php echo number_format($usluga["cijena"], 0, ",", "."); ?> €</td>
+                        </tr>
+                    <?php endforeach; ?>
+                    <tr>
+                        <th>Ukupno</th>
+                        <th><?php echo number_format($ukupno, 0, ",", "."); ?> €</th>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="pricing-note">Cijene ne uključuju PDV.</p>
+        </div>
+    </section>
+
     <section class="section-ink">
         <div class="wrap">
             <div class="hero" style="padding:0;">
@@ -110,15 +119,5 @@ $usluge = [
     </section>
 
 </main>
-<?php
 
-$paket1 = "Basic";
-$cijena1 = 2000;
-
-$paket2 = "Mid class";
-$cijena2 = 35445;
-
-$paket3 = "Rich";
-$cijena3 = 5;
-?>
-<?php include "parts/podnozje.php";?>
+<?php include "parts/podnozje.php"; ?>
