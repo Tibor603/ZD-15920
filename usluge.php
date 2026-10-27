@@ -11,7 +11,30 @@ $naslovStranice = "Usluge — Stražar";
 $aktivnaStranica = "usluge";
 include "parts/zaglavlje.php";
 ?>
+<?php 
+    $cijena = 450;
+    echo $cijena;
+    var_dump($cijena);
+    var_dump("450");
+    var_dump(7/2);
+    var_dump(8/2);
+    var_dump("5"+3);
+    var_dump("5". 3);
+    var_dump(17%5);
 
+    $time=135;
+    var_dump(intdiv($time,60)."h" . " " . $time%60 . "min");
+?>
+<?php 
+    $nazivTvrtke = "LemonCakes";
+    echo str_replace("d.o.o.", "j.d.o.o.", $nazivTvrtke);
+    echo mb_substr($nazivTvrtke,0,7);
+    echo strlen($nazivTvrtke);
+    echo mb_strlen($nazivTvrtke);
+    echo strtoupper($nazivTvrtke);
+    echo mb_strtoupper($nazivTvrtke);
+    
+?>
 <main>
 
     <section class="page-head">
