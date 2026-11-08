@@ -1,3 +1,4 @@
+<!-- TSD-4RT | TP | 22.09.2026. -->
 <footer class="site-footer">
     <div class="wrap">
         <div class="footer-grid">
@@ -41,6 +42,7 @@
         </div>
         <div class="footer-bottom">
             <span>© <?php echo date("Y"); ?> Stražar d.o.o. Sva prava pridržana.</span>
+            <span> Na tržištu od 2019. tj <?php echo date("Y")-2019 ?> godina</span>
             <span><a href="privatnost.php">Politika privatnosti</a></span>
         </div>
     </div>

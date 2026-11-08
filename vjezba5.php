@@ -1,3 +1,4 @@
+// TSD-4RT | TP | <?php date("j.n") ?>
 <?php 
     $cijena = 450;
     echo $cijena;
@@ -11,4 +12,6 @@
 
     $time=135;
     var_dump(intdiv($time,60)."h" . " " . $time%60 . "min");
+?>
+<?php
 ?>

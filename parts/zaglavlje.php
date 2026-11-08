@@ -1,3 +1,4 @@
+<!-- TSD-4RT | TP | 22.09.2026. -->
 <?php
 // Naslov stranice: svaka stranica može postaviti $naslovStranice prije include-a
 $naslovStranice = $naslovStranice ?? "Stražar — informacijska sigurnost za tvrtke";

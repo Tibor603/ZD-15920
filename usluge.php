@@ -1,23 +1,34 @@
 <!-- TSD-4RT | TP | 22.09.2026. -->
 <?php
 	const PDV = 0.25;
+	const dis = 0.15;
+
 	$procjena_pdv= 450 * PDV;
 	$analiza_pdv = 1280 * PDV;
 	$edukacija_pdv = 300 * PDV;
+
+	$procjena_pdv_ukupno=450 + $procjena_pdv;
+	$analiza_pdv_ukupno= 1280 + $analiza_pdv;
+	$edukacija_pdv_ukupno= 300 + $edukacija_pdv;
+
+	$procjena_pdv_ukupno_disc = $procjena_pdv_ukupno * dis;
+	$analiza_pdv_ukupno_disc=$analiza_pdv_ukupno *dis;
+	$edukacija_pdv_ukupno_disc=$edukacija_pdv_ukupno *dis;
 $usluge = [
-    ["naziv" => "Procjena rizika", "cijena" => 450, "cijena_pdv" => $procjena_pdv, "cijena_pdv_ukupno" => 450 + $procjena_pdv],
-    ["naziv" => "Sigurnosna analiza", "cijena" => 1280, "cijena_pdv" => $analiza_pdv, "cijena_pdv_ukupno" => 1280 + $analiza_pdv],
-    ["naziv" => "Edukacija zaposlenika", "cijena" => 300, "cijena_pdv" => $edukacija_pdv, "cijena_pdv_ukupno" => 300 + $edukacija_pdv],
+    ["naziv" => "Procjena rizika", "cijena" => 450, "cijena_pdv" => $procjena_pdv, "cijena_pdv_ukupno" => $procjena_pdv_ukupno,"cijena_pdv_ukupno_popust"=>$procjena_pdv_ukupno - $procjena_pdv_ukupno_disc],
+    ["naziv" => "Sigurnosna analiza", "cijena" => 1280, "cijena_pdv" => $analiza_pdv, "cijena_pdv_ukupno" => $analiza_pdv_ukupno,"cijena_pdv_ukupno_popust"=>$analiza_pdv_ukupno - $analiza_pdv_ukupno_disc],
+    ["naziv" => "Edukacija zaposlenika", "cijena" => 300, "cijena_pdv" => $edukacija_pdv, "cijena_pdv_ukupno" => $edukacija_pdv_ukupno,"cijena_pdv_ukupno_popust"=>$edukacija_pdv_ukupno - $edukacija_pdv_ukupno_disc],
 ];
 $ukupno = array_sum(array_column($usluge, "cijena"));
 $ukupno_pdv_ukupno = array_sum(array_column($usluge, "cijena_pdv_ukupno"));
+$ukupno_pdv_ukupno_disc = array_sum(array_column($usluge, "cijena_pdv_ukupno_popust"));
 
 $naslovStranice = "Usluge — Stražar";
 $aktivnaStranica = "usluge";
 include "parts/zaglavlje.php";
 ?>
 
-<?php 
+<p style="font-size: small;"><?php 
   //B1
   $nazivTvrtke = "Stražar d.o.o.";
   echo str_replace("d.o.o.", "j.d.o.o.", $nazivTvrtke ."<br>");
@@ -33,8 +44,12 @@ include "parts/zaglavlje.php";
 	echo number_format(1234.5, 2). "<br>";
 	echo number_format(1234.5, 2, ",","."). "<br>";
 	echo round(318.75). "<br>";
-	echo date("j. n. Y."). "<br>"
-?>
+	echo date("j. n. Y."). "<br>";
+	//D 1.2
+	$email=" Info@SigurnaMreza.HR ";
+	$dmail = strtolower(trim($email));
+	echo '<a href="mailto:' .$dmail.'">' . $dmail . '</a>'
+?></p>
 <main>
 
   <section class="page-head">
@@ -93,6 +108,7 @@ include "parts/zaglavlje.php";
                     <th>Cijena</th>
                     <th>PDV od cijene</th>
                     <th>Cijena s PDV</th>
+                    <th style="color: goldenrod;">Cijena za članove (-15%)</th>
                 </tr>
             </thead>
             <tbody>
@@ -102,6 +118,7 @@ include "parts/zaglavlje.php";
                       <td><?php echo number_format($usluga["cijena"], 2, ".", ","); ?> €</td>
                       <td><?php echo number_format($usluga["cijena_pdv"], 2, ".", ","); ?> €</td>
                       <td><?php echo number_format($usluga["cijena_pdv_ukupno"], 2, ".", ","); ?> €</td>
+                      <td><?php echo number_format($usluga["cijena_pdv_ukupno_popust"], 2, ".", ","); ?> €</td>
                     </tr>
                 <?php endforeach; ?>
                 <tr>
@@ -109,6 +126,7 @@ include "parts/zaglavlje.php";
                     <th><?php echo number_format($ukupno, 2, ".", ","); ?> €</th>
 										<th></th>
                     <th><?php echo number_format($ukupno_pdv_ukupno, 2, ".", ","); ?> €</th>
+                    <th><?php echo number_format($ukupno_pdv_ukupno_disc, 2, ".", ","); ?> €</th>
                 </tr>
             </tbody>
         </table>
