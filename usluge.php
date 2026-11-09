@@ -15,9 +15,9 @@
 	$analiza_pdv_ukupno_disc=$analiza_pdv_ukupno *dis;
 	$edukacija_pdv_ukupno_disc=$edukacija_pdv_ukupno *dis;
 $usluge = [
-    ["naziv" => "Procjena rizika", "cijena" => 450, "cijena_pdv" => $procjena_pdv, "cijena_pdv_ukupno" => $procjena_pdv_ukupno,"cijena_pdv_ukupno_popust"=>$procjena_pdv_ukupno - $procjena_pdv_ukupno_disc],
-    ["naziv" => "Sigurnosna analiza", "cijena" => 1280, "cijena_pdv" => $analiza_pdv, "cijena_pdv_ukupno" => $analiza_pdv_ukupno,"cijena_pdv_ukupno_popust"=>$analiza_pdv_ukupno - $analiza_pdv_ukupno_disc],
-    ["naziv" => "Edukacija zaposlenika", "cijena" => 300, "cijena_pdv" => $edukacija_pdv, "cijena_pdv_ukupno" => $edukacija_pdv_ukupno,"cijena_pdv_ukupno_popust"=>$edukacija_pdv_ukupno - $edukacija_pdv_ukupno_disc],
+    ["naziv" => "Procjena rizika", "cijena" => 450, "opis" => "Procjena rizika čuvanih podataka i sustava, s popisom prijetnji i preporučenih mjera zaštite.", "cijena_pdv" => $procjena_pdv, "cijena_pdv_ukupno" => $procjena_pdv_ukupno,"cijena_pdv_ukupno_popust"=>$procjena_pdv_ukupno - $procjena_pdv_ukupno_disc],
+    ["naziv" => "Sigurnosna analiza", "cijena" => 1280, "opis" => "Detaljna analiza mreže, aplikacija i pristupa s izvještajem o pronađenim propustima.","cijena_pdv" => $analiza_pdv, "cijena_pdv_ukupno" => $analiza_pdv_ukupno,"cijena_pdv_ukupno_popust"=>$analiza_pdv_ukupno - $analiza_pdv_ukupno_disc],
+    ["naziv" => "Edukacija zaposlenika", "cijena" => 300, "opis" => "Radionice za zaposlenike o prepoznavanju phishinga i sigurnom radu s podacima.","cijena_pdv" => $edukacija_pdv, "cijena_pdv_ukupno" => $edukacija_pdv_ukupno,"cijena_pdv_ukupno_popust"=>$edukacija_pdv_ukupno - $edukacija_pdv_ukupno_disc],
 ];
 $ukupno = array_sum(array_column($usluge, "cijena"));
 $ukupno_pdv_ukupno = array_sum(array_column($usluge, "cijena_pdv_ukupno"));
@@ -27,6 +27,7 @@ $naslovStranice = "Usluge — Stražar";
 $aktivnaStranica = "usluge";
 include "parts/zaglavlje.php";
 ?>
+
 
 <p style="font-size: small;"><?php 
   //B1
@@ -105,7 +106,8 @@ include "parts/zaglavlje.php";
             <thead>
                 <tr>
                     <th>Usluga</th>
-                    <th>Cijena</th>
+                    <th>Cijena</th>¸
+										<th>Opis</th>
                     <th>PDV od cijene</th>
                     <th>Cijena s PDV</th>
                     <th style="color: goldenrod;">Cijena za članove (-15%)</th>
@@ -115,18 +117,20 @@ include "parts/zaglavlje.php";
                 <?php foreach ($usluge as $usluga): ?>
                     <tr>
                         <td><?php echo htmlspecialchars($usluga["naziv"]); ?></td>
-                      <td><?php echo number_format($usluga["cijena"], 2, ".", ","); ?> €</td>
-                      <td><?php echo number_format($usluga["cijena_pdv"], 2, ".", ","); ?> €</td>
-                      <td><?php echo number_format($usluga["cijena_pdv_ukupno"], 2, ".", ","); ?> €</td>
-                      <td><?php echo number_format($usluga["cijena_pdv_ukupno_popust"], 2, ".", ","); ?> €</td>
+												<td><?php echo number_format($usluga["cijena"], 2, ",", "."); ?> €</td>
+												<td><?php echo htmlspecialchars(mb_substr($usluga["opis"],0,40)). "..."; ?></td>
+                      <td><?php echo number_format($usluga["cijena_pdv"], 2, ",", "."); ?> €</td>
+                      <td><?php echo number_format($usluga["cijena_pdv_ukupno"], 2, ",", "."); ?> €</td>
+                      <td><?php echo number_format($usluga["cijena_pdv_ukupno_popust"], 2, ",", "."); ?> €</td>
                     </tr>
                 <?php endforeach; ?>
                 <tr>
                     <th>Ukupno</th>
-                    <th><?php echo number_format($ukupno, 2, ".", ","); ?> €</th>
+                    <th><?php echo number_format($ukupno, 2, ",", "."); ?> €</th>
 										<th></th>
-                    <th><?php echo number_format($ukupno_pdv_ukupno, 2, ".", ","); ?> €</th>
-                    <th><?php echo number_format($ukupno_pdv_ukupno_disc, 2, ".", ","); ?> €</th>
+										<th></th>
+                    <th><?php echo number_format($ukupno_pdv_ukupno, 2, ",", "."); ?> €</th>
+                    <th><?php echo number_format($ukupno_pdv_ukupno_disc, 2, ",", "."); ?> €</th>
                 </tr>
             </tbody>
         </table>
